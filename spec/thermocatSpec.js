@@ -126,6 +126,14 @@ describe('Thermocat', function(){
       expect(thermocat.maximumTemperature).toEqual(25);
     });
 
+  });
+
+  describe('Changing temperature within maximum and minimum temperature ranges', function(){
+
+    it('cannot be decreased below 10 degrees', function(){
+      thermocat.decreaseTemperatureBy(11);
+      expect(thermocat.temperature).toEqual(10);
+    });
 
   });
 

@@ -46,4 +46,5 @@ Thermocat.prototype.turnOffPowerSave = function() {
 
 Thermocat.prototype.turnOnPowerSave = function() {
   this.isPowerSaveMode = true;
+  this.maximumTemperature = 25;
 };
