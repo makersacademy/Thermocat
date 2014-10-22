@@ -94,7 +94,7 @@ describe('Thermocat', function(){
 
   });
 
-  describe('Power saving', function() {
+  describe('Toggling Power Save mode', function() {
 
     it('can be turned off Power Save mode', function(){
       thermocat.turnOffPowerSave();
@@ -106,6 +106,20 @@ describe('Thermocat', function(){
       thermocat.turnOnPowerSave();
       expect(thermocat.isPowerSaveMode).toBe(true);
     });
+
+  });
+
+  describe('Maximum temperatures', function(){
+
+    it('has a max of 25 degrees if power save mode is on', function(){
+      expect(thermocat.maximumTemperature).toEqual(25);
+    });
+
+    it('has a max of 32 degrees if power save mode is off', function(){
+      thermocat.turnOffPowerSave();
+      expect(thermocat.maximumTemperature).toEqual(32);
+    });
+
 
   });
 

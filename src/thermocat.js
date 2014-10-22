@@ -4,6 +4,7 @@ function Thermocat() {
   this.color = 'yellow';
   this.type = 'cat';
   this.minimumTemperature = 10;
+  this.maximumTemperature = 25;
 };
 
 Thermocat.prototype.increaseTemperature = function() {
@@ -36,9 +37,12 @@ Thermocat.prototype.changeColor = function () {
   if (this.temperature >= 25) {
   	this.color = 'red'
   };
-  
 };
 
 Thermocat.prototype.turnOffPowerSave = function() {
 	this.isPowerSaveMode = false;
+};
+
+Thermocat.prototype.turnOnPowerSave = function() {
+  this.isPowerSaveMode = true;
 };
