@@ -35,9 +35,19 @@ describe('Thermocat', function(){
       expect(thermocat.temperature).toEqual(21);
     });
 
+    it('increase the temperature by five degrees', function(){
+      thermocat.increaseTemperatureBy(5);
+      expect(thermocat.temperature).toEqual(25);
+    });
+
     it('decrease the temperature by one degree', function(){
       thermocat.decreaseTemperature();
       expect(thermocat.temperature).toEqual(19);
+    });
+
+    it('decrease the temperature by five degrees', function(){
+      thermocat.decreaseTemperatureBy(5);
+      expect(thermocat.temperature).toEqual(15);
     });
 
     it('can reset temperature to twenty degrees', function() {
@@ -45,6 +55,17 @@ describe('Thermocat', function(){
       thermocat.resetTemperature();
       expect(thermocat.temperature).toEqual(20);
     });
+
+  });
+
+  describe('Changing color', function(){
+
+    it('should change to green when temperature is below 18', function(){
+      thermocat.decreaseTemperatureBy(3);
+      thermocat.changeColor();
+      expect(thermocat.color).toEqual('green');
+    });
+
 
   });
 

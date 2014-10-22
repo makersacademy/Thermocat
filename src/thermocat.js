@@ -6,9 +6,21 @@ function Thermocat() {
 };
 
 Thermocat.prototype.increaseTemperature = function() {
-  this.temperature = this.temperature + 1
+  return this.increaseTemperatureBy(1)
+};
+
+Thermocat.prototype.increaseTemperatureBy = function(degrees) {
+  this.temperature = this.temperature + degrees
 };
 
 Thermocat.prototype.decreaseTemperature = function() {
-	this.temperature = this.temperature - 1
+	return this.decreaseTemperatureBy(1)
+};
+
+Thermocat.prototype.decreaseTemperatureBy = function(degrees) {
+  this.temperature = this.temperature - degrees
+};
+
+Thermocat.prototype.resetTemperature = function() {
+  this.temperature = 20;
 };
