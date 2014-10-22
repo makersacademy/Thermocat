@@ -26,6 +26,10 @@ describe('Thermocat', function(){
       expect(thermocat.type).toBe('cat')
     });
 
+    it('should have a minimum temperature', function() {
+      expect(thermocat.minimumTemperature).toEqual(10);
+    });
+
   });
 
   describe('Changing temperature', function() {
@@ -76,11 +80,24 @@ describe('Thermocat', function(){
 
     it('should change to red when temperature is above 25', function(){
       thermocat.increaseTemperatureBy(5);
+      thermocat.changeColor();
       expect(thermocat.color).toEqual('red');
+    });
+
+    it('should change to yellow when temperature changes from 25 to 24', function() {
+      thermocat.increaseTemperatureBy(5);
+      thermocat.changeColor();
+      thermocat.decreaseTemperature();
+      thermocat.changeColor();
+      expect(thermocat.color).toEqual('yellow');
     });
 
 
   });
+
+  // describe('Power saving', function() {
+  //   expect()
+  // });
 
 
 });

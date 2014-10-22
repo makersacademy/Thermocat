@@ -29,8 +29,11 @@ Thermocat.prototype.changeColor = function () {
   if (this.temperature <= 18) {
     this.color = 'green'
   };
-  if (this.temperature >= 18) {
+  if (this.temperature >= 18 && this.temperature <= 25) {
     this.color = 'yellow'
+  };
+  if (this.temperature >= 25) {
+  	this.color = 'red'
   };
   
 };
