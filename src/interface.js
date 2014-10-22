@@ -2,14 +2,14 @@ function ThermocatView(element) {
   this.element = $(element);
   this.thermocat = new Thermocat;
   this.element.text(this.thermocat.temperature);
-  this.bindTo('.increase_temperature', this.thermocat, this.thermocat.increaseTemperature);
-  this.bindTo('.decrease_temperature', this.thermocat, this.thermocat.decreaseTemperature);
-  this.bindTo('.reset', this.thermocat, this.thermocat.resetTemperature);
+  this.bindTo('.increase_temperature', this.thermocat, this.thermocat.increaseTemperature, this.element);
+  this.bindTo('.decrease_temperature', this.thermocat, this.thermocat.decreaseTemperature, this.element);
+  this.bindTo('.reset', this.thermocat, this.thermocat.resetTemperature, this.element);
 };
 
-ThermocatView.prototype.bindTo = function(selector, obj, func) {
+ThermocatView.prototype.bindTo = function(selector, obj, func, element) {
   $(selector).on('click', function() {
-    $('.temperature h1').text(func.call(obj));
+    element.text(func.call(obj));
   });
 };
 
