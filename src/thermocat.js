@@ -20,7 +20,9 @@ Thermocat.prototype.decreaseTemperature = function() {
 };
 
 Thermocat.prototype.decreaseTemperatureBy = function(degrees) {
-  this.temperature = this.temperature - degrees
+  if (this.temperature === this.minimumTemperature) { 
+  	return this.minimumTemperature };
+  return this.temperature = this.temperature - degrees
 };
 
 Thermocat.prototype.resetTemperature = function() {

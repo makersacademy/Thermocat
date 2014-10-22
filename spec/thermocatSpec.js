@@ -131,11 +131,19 @@ describe('Thermocat', function(){
   describe('Changing temperature within maximum and minimum temperature ranges', function(){
 
     it('cannot be decreased below 10 degrees', function(){
-      thermocat.decreaseTemperatureBy(11);
+      thermocat.decreaseTemperatureBy(10);
+      thermocat.decreaseTemperature();
+      thermocat.decreaseTemperature();
       expect(thermocat.temperature).toEqual(10);
     });
 
-  });
+    it('cannot increase the temperature passed 25 degrees when power save mode is on', function() {
+      thermocat.increaseTemperatureBy(5);
+      thermocat.increaseTemperature();
+      expect(thermocat.temperature).toEqual(25);
+    });
+
+    });
 
 
 });
