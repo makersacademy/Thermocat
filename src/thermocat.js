@@ -41,6 +41,7 @@ Thermocat.prototype.changeColor = function () {
 
 Thermocat.prototype.turnOffPowerSave = function() {
 	this.isPowerSaveMode = false;
+	this.maximumTemperature = 32;
 };
 
 Thermocat.prototype.turnOnPowerSave = function() {
