@@ -72,7 +72,11 @@ describe('Thermocat', function(){
       thermocat.increaseTemperature();
       thermocat.changeColor();
       expect(thermocat.color).toEqual('yellow');
+    });
 
+    it('should change to red when temperature is above 25', function(){
+      thermocat.increaseTemperatureBy(5);
+      expect(thermocat.color).toEqual('red');
     });
 
 
