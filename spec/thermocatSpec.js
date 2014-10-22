@@ -31,9 +31,15 @@ describe('Thermocat', function(){
   describe('Changing temperature', function() {
 
     it('increase the temperature by one degrees', function() {
-      thermocat.increaseTemperature
+      thermocat.increaseTemperature();
       expect(thermocat.temperature).toEqual(21);
     });
+
+    it('decrease the temperature by one degree', function(){
+      thermocat.decreaseTemperature();
+      expect(thermocat.temperature).toEqual(19);
+    });
+
   });
 
 

@@ -4,3 +4,7 @@ function Thermocat() {
   this.color = 'yellow';
   this.type = 'cat';
 };
+
+Thermocat.prototype.increaseTemperature = function() {
+  this.temperature = this.temperature + 1
+};
