@@ -137,13 +137,20 @@ describe('Thermocat', function(){
       expect(thermocat.temperature).toEqual(10);
     });
 
-    it('cannot increase the temperature passed 25 degrees when power save mode is on', function() {
+    it('cannot increase the temperature past 25 degrees when power save mode is on', function() {
       thermocat.increaseTemperatureBy(5);
       thermocat.increaseTemperature();
       expect(thermocat.temperature).toEqual(25);
     });
 
+    it('cannot increase the temperature past 32 degrees when power save mode is off', function(){
+      thermocat.turnOffPowerSave();
+      thermocat.increaseTemperatureBy(12);
+      thermocat.increaseTemperature();
+      expect(thermocat.temperature).toEqual(32);
     });
+
+  });
 
 
 });
