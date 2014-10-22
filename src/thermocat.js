@@ -38,3 +38,7 @@ Thermocat.prototype.changeColor = function () {
   };
   
 };
+
+Thermocat.prototype.turnOffPowerSave = function() {
+	this.isPowerSaveMode = false;
+};

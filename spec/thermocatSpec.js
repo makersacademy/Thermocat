@@ -101,6 +101,12 @@ describe('Thermocat', function(){
       expect(thermocat.isPowerSaveMode).toBe(false);
     });
 
+    it('can be turned back on Power Save mode', function() {
+      thermocat.turnOffPowerSave();
+      thermocat.turnOnPowerSave();
+      expect(thermocat.isPowerSaveMode).toBe(true);
+    });
+
   });
 
 
