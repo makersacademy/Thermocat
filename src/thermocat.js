@@ -8,3 +8,7 @@ function Thermocat() {
 Thermocat.prototype.increaseTemperature = function() {
   this.temperature = this.temperature + 1
 };
+
+Thermocat.prototype.decreaseTemperature = function() {
+	this.temperature = this.temperature - 1
+};

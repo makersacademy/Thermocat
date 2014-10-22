@@ -40,6 +40,12 @@ describe('Thermocat', function(){
       expect(thermocat.temperature).toEqual(19);
     });
 
+    it('can reset temperature to twenty degrees', function() {
+      thermocat.increaseTemperature();
+      thermocat.resetTemperature();
+      expect(thermocat.temperature).toEqual(20);
+    });
+
   });
 
 
