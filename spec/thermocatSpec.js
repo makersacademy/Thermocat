@@ -22,11 +22,19 @@ describe('Thermocat', function(){
       expect(thermocat.color).toBe('yellow')
     });
 
-
+    it('should be a cat', function() {
+      expect(thermocat.type).toBe('cat')
+    });
 
   });
 
+  describe('Changing temperature', function() {
 
+    it('increase the temperature by one degrees', function() {
+      thermocat.increaseTemperature
+      expect(thermocat.temperature).toEqual(21);
+    });
+  });
 
 
 });
