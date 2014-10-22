@@ -92,12 +92,28 @@ describe('Thermocat', function(){
       expect(thermocat.color).toEqual('yellow');
     });
 
+  });
+
+  describe('Power saving', function() {
+
+    it('can be turned off Power Save mode', function(){
+      thermocat.turnOffPowerSave();
+      expect(thermocat.isPowerSaveMode).toBe(false);
+    });
 
   });
 
-  // describe('Power saving', function() {
-  //   expect()
-  // });
-
 
 });
+
+
+
+
+
+
+
+
+
+
+
+

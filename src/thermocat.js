@@ -3,6 +3,7 @@ function Thermocat() {
   this.isPowerSaveMode = true;
   this.color = 'yellow';
   this.type = 'cat';
+  this.minimumTemperature = 10;
 };
 
 Thermocat.prototype.increaseTemperature = function() {
