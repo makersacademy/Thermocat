@@ -24,3 +24,7 @@ Thermocat.prototype.decreaseTemperatureBy = function(degrees) {
 Thermocat.prototype.resetTemperature = function() {
   this.temperature = 20;
 };
+
+Thermocat.prototype.changeColor = function () {
+	this.color = 'green'
+};

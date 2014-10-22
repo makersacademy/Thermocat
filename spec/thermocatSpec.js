@@ -66,6 +66,15 @@ describe('Thermocat', function(){
       expect(thermocat.color).toEqual('green');
     });
 
+    it('should change to yellow when temperature changes from 17 to 18', function() {
+      thermocat.decreaseTemperatureBy(3)
+      thermocat.changeColor();
+      thermocat.increaseTemperature();
+      thermocat.changeColor();
+      expect(thermocat.color).toEqual('yellow');
+
+    });
+
 
   });
 
