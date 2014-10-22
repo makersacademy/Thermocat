@@ -12,7 +12,11 @@ Thermocat.prototype.increaseTemperature = function() {
 };
 
 Thermocat.prototype.increaseTemperatureBy = function(degrees) {
-  this.temperature = this.temperature + degrees
+  if (this.temperature === this.maximumTemperature) {
+    return this.maximumTemperature
+  };
+  return this.temperature = this.temperature + degrees
+
 };
 
 Thermocat.prototype.decreaseTemperature = function() {
