@@ -24,13 +24,13 @@ Thermocat.prototype.decreaseTemperature = function() {
 };
 
 Thermocat.prototype.decreaseTemperatureBy = function(degrees) {
-  if (this.temperature === this.minimumTemperature) { 
+  if (this.temperature === this.minimumTemperature) {
   	return this.minimumTemperature };
   return this.temperature = this.temperature - degrees
 };
 
 Thermocat.prototype.resetTemperature = function() {
-  this.temperature = 20;
+  return this.temperature = 20;
 };
 
 Thermocat.prototype.changeColor = function () {

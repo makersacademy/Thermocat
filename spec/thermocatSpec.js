@@ -60,6 +60,11 @@ describe('Thermocat', function(){
       expect(thermocat.temperature).toEqual(20);
     });
 
+    it('can reset temperature to twenty degrees inline', function() {
+      thermocat.increaseTemperature();
+      expect(thermocat.resetTemperature()).toEqual(20);
+    });
+
   });
 
   describe('Changing color', function(){
