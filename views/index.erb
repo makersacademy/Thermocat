@@ -23,8 +23,9 @@
   <script src="interface.js"></script>
   <script>
     $(document).ready(function() {
-      $.get('http://www.myweather2.com/developer/forecast.ashx?uac=lPJ6yq.VXI&output=json&query=me1', function(data) {
-      currentTemp = data['weather']['curren_weather'][0]['temp'];
+      $.get('/weather', function(data) {
+        console.log(JSON.parse(data));
+      currentTemp = JSON.parse(data)['weather']['curren_weather'][0]['temp'];
       new ThermocatView('.temperature h1', parseInt(currentTemp));
       });
     });
